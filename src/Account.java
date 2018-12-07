@@ -1,19 +1,21 @@
 
 public class Account {
 	
-	private String accountName;
-	private Double accountBalance;
+	public String accountName;
+	public Double accountBalance;
+	private int accountPassword;
 	
-	public Account (String accountName, Double accountBalance) {
+	public Account (String accountName, Double accountBalance, int accountPassword) {
 		this.accountName = accountName;
 		this.accountBalance = accountBalance;
+		this.accountPassword = accountPassword;
 	}
 	
-	private static int getAccountPassword() {
-		return 123456; 
+	private int getAccountPassword() {
+		return accountPassword; 
 	}
 	
-	public static Boolean testAccountPassword(int input) {
+	public Boolean testAccountPassword(int input) {
 		if (input == getAccountPassword()) {
 			return true;
 		}

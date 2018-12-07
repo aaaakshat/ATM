@@ -10,8 +10,7 @@ To install the ATM run
 ```bash
 git clone https://github.com/aaaakshat/ATM.git
 ```
-And then run the ATM.java file.<br/>
-The default password for the account should be 123456
+And then run the ATM.java file.
 
 ## License
 

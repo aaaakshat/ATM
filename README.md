@@ -15,3 +15,7 @@ And then run the ATM.java file.
 ## License
 
 This project is licensed under the MIT open source license.
+
+## Credit
+
+This code was written in the Eclipse IDE and the GUI was developed in NetBeans.

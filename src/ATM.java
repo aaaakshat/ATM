@@ -2,21 +2,34 @@ import java.util.*;
 
 public class ATM {
 
-	Account account;
+	Account client;
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Account account = new Account("John Applesmith", 99999910.00, 123456);
-		ATM atm = new ATM(account);
-		System.out.println(atm.getAccountBalance());
-	}
 	
-	public ATM(Account account) {
-		this.account = account;
+	public ATM(String accountName, Double accountBalance, int accountPassword) {
+		this.client = new Account(accountName, accountBalance, accountPassword);
 	}
 	
 	public String getAccountBalance() {
-		return account.accountName + ": $" + Double.toString(account.accountBalance);
+		return client.accountName + ": $" + Double.toString(client.accountBalance);
 	}
 
+	public void accountDeposit() {
+		
+	}
+	
+	public void accountWithdrawal() {
+		
+	}
+	
+	public void accountHistory() {
+		
+	}
+	
+	public void accountChangePin() {
+		
+	}
+	
+	public void endTransaction() {
+		
+	}
 }

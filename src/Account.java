@@ -22,9 +22,15 @@ public class Account {
 		}
 		return false;
 	}
+	
+	public void setPassword(int oldPassword, int newPassword) {
+		if (testAccountPassword(oldPassword)) {
+			this.accountPassword = newPassword;
+		}
+	}
 
-	public void newTransactionEntry(String transactionMsg, Double transactionAmount, Double newAccountBalance) {
-		transactions.addTransactionObj(transactionMsg, transactionAmount, newAccountBalance);
+	public void newTransactionEntry(String transactionMsg, Double transactionAmount) {
+		transactions.addTransactionObj(transactionMsg, transactionAmount, this.accountBalance);
 	}
 	
 }

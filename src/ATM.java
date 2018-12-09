@@ -13,23 +13,32 @@ public class ATM {
 		return client.accountName + ": $" + Double.toString(client.accountBalance);
 	}
 
-	public void accountDeposit() {
-		
+	public void accountDeposit(Double depositValue) {
+		client.accountBalance = client.accountBalance + depositValue;
+		client.newTransactionEntry("DEPOSIT:", depositValue);
 	}
 	
-	public void accountWithdrawal() {
-		
+	public String accountWithdrawal(Double withdrawalValue) {
+		if (withdrawalValue <= client.accountBalance) {
+			client.accountBalance = client.accountBalance - withdrawalValue;
+			client.newTransactionEntry("WITHDRAWAL:", withdrawalValue);
+			return "success";
+		} else {
+			return "failure";
+		}
 	}
 	
-	public void accountHistory() {
-		
+	public String accountHistory() {
+		return client.transactions.getHistory();
 	}
 	
-	public void accountChangePin() {
-		
+	public String accountChangePin(int oldPassword, int newPassword) {
+		if (client.testAccountPassword(oldPassword)) {
+			client.setPassword(oldPassword, newPassword);
+			return "success";
+		} else {
+			return "failure";
+		}
 	}
 	
-	public void endTransaction() {
-		
-	}
 }

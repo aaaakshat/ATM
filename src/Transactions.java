@@ -15,11 +15,11 @@ public class Transactions {
 		this.transactionMsg = transactionMsg;
 		this.transactionAmount = transactionAmount;
 		this.newAccountBalance = newAccountBalance;
-		String history = transactionMsg + "     $" +Double.toString(transactionAmount) + "     $" + Double.toString(newAccountBalance) + "\n";
+		String history = transactionMsg + "     $" +Double.toString(transactionAmount) + "     NEW BAL. $" + Double.toString(newAccountBalance) + "\n";
 		this.history = this.history + history;
 	}
 	
 	public String getHistory() {
-		return this.history;
+		return this.history ;
 	}
 }

@@ -44,3 +44,4 @@ Done:
 To-Do:
 - [ ] Fix pin visibilty issue _(need to implement awt ActionListener)_
 - [ ] Make GUI less trash
+- [ ] Need to work on persistence and creating and mainting users

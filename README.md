@@ -18,7 +18,7 @@ This project is licensed under the MIT open source license.
 
 ## Live Updates
 
-_Done:_  
+_Done_
 - [x] Define all operational methods
 - [x] Create general window UI
 - [x] Complete operations
@@ -26,6 +26,6 @@ _Done:_
 - [x] Implement button states
 - [x] Fix input field usability bug 
 
-_To-Do:_  
+_To-Do:_
 - [ ] Fix pin visibilty issue _(need to implement awt ActionListener)_
 - [ ] Make GUI less trash

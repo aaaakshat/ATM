@@ -1,4 +1,4 @@
-# A simple ATM UI
+# SUPER COOL ATM V2.0
 
 This is a simple ATM UI written as part of a school assignment. It has a basic user interface that allows the user to interact with it a though it is an ATM
 

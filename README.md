@@ -8,9 +8,24 @@ This is a simple ATM UI written as part of a school assignment. It has a basic u
 
 To install the ATM run
 ```bash
+cd [your folder]
 git clone https://github.com/aaaakshat/ATM.git
 ```
-And then run the ATM.java file.
+And then run the ATM.jar file:
+```bash
+java -jar [your folder]/ATM/dist/ATM.jar
+```
+
+For example, if you wanted to install it on your desktop you would run
+
+```bash
+cd ~/Desktop
+git clone https://github.com/aaaakshat/ATM.git
+```
+... and then
+```bash
+java -jar ~/Desktop/ATM/dist/ATM.jar
+```
 
 ## License
 
@@ -18,7 +33,7 @@ This project is licensed under the MIT open source license.
 
 ## Live Updates
 
-_Done_
+Done:
 - [x] Define all operational methods
 - [x] Create general window UI
 - [x] Complete operations
@@ -26,6 +41,6 @@ _Done_
 - [x] Implement button states
 - [x] Fix input field usability bug 
 
-_To-Do:_
+To-Do:
 - [ ] Fix pin visibilty issue _(need to implement awt ActionListener)_
 - [ ] Make GUI less trash

@@ -15,6 +15,12 @@ public class ATM {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        WindowUI window = new WindowUI("John AppleSmith", 998854.12, 123456);
+        window.setVisible(true);
+        
+        window.runInitialisationSequence();
+        
     }
     
 }

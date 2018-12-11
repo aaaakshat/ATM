@@ -33,6 +33,7 @@ public class WindowUI extends javax.swing.JFrame {
         
     String currentOperationState = "";
     int tempOldPin;
+    int tempChangePin;
     
     public void authSequence() {
         withdrawalButton.setEnabled(false);
@@ -52,7 +53,8 @@ public class WindowUI extends javax.swing.JFrame {
         pinChangeButton.setEnabled(true);
 
         addOutputText("WELCOME, " + this.client.accountName + "\n");
-         setInputState(false);
+        setInputState(false);
+        resetConfig();
     }
     
     public void resetConfig() {
@@ -86,6 +88,15 @@ public class WindowUI extends javax.swing.JFrame {
         return Double.parseDouble(userInputField.getText());
         } catch (NumberFormatException | NullPointerException e) {
             return 0.00;
+        }
+    }
+    
+    public boolean isValidInput() {
+        try {
+            Double.parseDouble(userInputField.getText());
+            return true;
+        } catch (NumberFormatException | NullPointerException e) {
+            return false;
         }
     }
     
@@ -213,7 +224,7 @@ public class WindowUI extends javax.swing.JFrame {
 
         textOutputArea.setColumns(20);
         textOutputArea.setFont(new java.awt.Font("Square721 BT", 0, 14)); // NOI18N
-        textOutputArea.setForeground(new java.awt.Color(255, 255, 255));
+        textOutputArea.setForeground(new java.awt.Color(0, 0, 0));
         textOutputArea.setRows(5);
         jScrollPane1.setViewportView(textOutputArea);
 
@@ -304,16 +315,16 @@ public class WindowUI extends javax.swing.JFrame {
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
         // TODO add your handling code here:
-        System.out.println(getOperationState());
+        
         switch (getOperationState()) {
             case "withdrawal":
                 if (testInputFieldValue() != 0.00 && this.accountWithdrawal(testInputFieldValue()) == true) {
                     addOutputText("Withdrawal Success");
-                    System.out.println("the withdrawal works.");
+                    
                 } else {
                     addOutputText("Withdrawal Error");
-                    System.out.println("the withdrawal no works.");
-                }   System.out.println(this.accountHistory());
+                    
+                }   
                 setInputState(false);
                 resetConfig();
                 break;
@@ -328,7 +339,7 @@ public class WindowUI extends javax.swing.JFrame {
                 resetConfig();
                 break;
             case "pin change":
-                if (this.client.testAccountPassword(testInputFieldValue().intValue()) == true) {
+                if (isValidInput() == true && this.client.testAccountPassword(testInputFieldValue().intValue()) == true) {
                     tempOldPin = testInputFieldValue().intValue();
                     addOutputText("Enter New Pin");
                     setOperationState("new pin input");
@@ -336,19 +347,36 @@ public class WindowUI extends javax.swing.JFrame {
                 } else {
                     addOutputText("Pin Change Error");
                     userInputField.setText("");
-                }   break;
-            case "new pin input":
-                if (accountChangePin(tempOldPin, testInputFieldValue().intValue()) == true) {
-                    addOutputText("Pin Change Success");
                     setInputState(false);
+                    resetConfig();
+                }
+                break;
+            case "new pin input":
+                if (isValidInput() == true) {
+                    addOutputText("Confirm new pin");
+                    tempChangePin = testInputFieldValue().intValue();
+                    setOperationState("pin change verify");
+                    userInputField.setText("");
+                } else {
+                    addOutputText("Pin Change Error");
+                    userInputField.setText("");
+                    setInputState(false);
+                    resetConfig();
+                }
+                break;
+            case "pin change verify":
+                if (isValidInput() == true && testInputFieldValue().intValue() == tempChangePin) {
+                    accountChangePin(tempOldPin, tempChangePin);
+                    addOutputText("Pin Change Success");
                 } else {
                     addOutputText("Pin Change Error");
                     userInputField.setText("");
                 }
+                setInputState(false);
                 resetConfig();
                 break;
             case "authentication":
-                if (this.client.testAccountPassword(testInputFieldValue().intValue()) == true) {
+                if (this.client.testAccountPassword(testInputFieldValue().intValue())) {
                     addOutputText("Pin Verified");
                     authCompletionSequence();
                 } else {

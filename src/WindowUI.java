@@ -204,8 +204,9 @@ public class WindowUI extends javax.swing.JFrame {
         emptyButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         emptyButton.setToolTipText("");
 
-        enterButton.setBackground(new java.awt.Color(0, 204, 204));
+        enterButton.setBackground(new java.awt.Color(102, 255, 102));
         enterButton.setFont(new java.awt.Font("Arame", 1, 18)); // NOI18N
+        enterButton.setForeground(new java.awt.Color(51, 204, 0));
         enterButton.setText("ENTER");
         enterButton.setOpaque(false);
         enterButton.addActionListener(new java.awt.event.ActionListener() {
@@ -214,7 +215,9 @@ public class WindowUI extends javax.swing.JFrame {
             }
         });
 
+        clearButton.setBackground(new java.awt.Color(255, 204, 204));
         clearButton.setFont(new java.awt.Font("Arame", 1, 18)); // NOI18N
+        clearButton.setForeground(new java.awt.Color(255, 51, 51));
         clearButton.setText("CLEAR");
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

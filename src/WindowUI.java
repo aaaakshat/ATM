@@ -194,7 +194,7 @@ public class WindowUI extends javax.swing.JFrame {
         emptyButton.setToolTipText("");
 
         enterButton.setBackground(new java.awt.Color(0, 204, 204));
-        enterButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        enterButton.setFont(new java.awt.Font("Arame", 1, 18)); // NOI18N
         enterButton.setText("ENTER");
         enterButton.setOpaque(false);
         enterButton.addActionListener(new java.awt.event.ActionListener() {
@@ -203,7 +203,7 @@ public class WindowUI extends javax.swing.JFrame {
             }
         });
 
-        clearButton.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        clearButton.setFont(new java.awt.Font("Arame", 1, 18)); // NOI18N
         clearButton.setText("CLEAR");
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,6 +213,7 @@ public class WindowUI extends javax.swing.JFrame {
 
         textOutputArea.setColumns(20);
         textOutputArea.setFont(new java.awt.Font("Square721 BT", 0, 14)); // NOI18N
+        textOutputArea.setForeground(new java.awt.Color(255, 255, 255));
         textOutputArea.setRows(5);
         jScrollPane1.setViewportView(textOutputArea);
 
@@ -254,7 +255,7 @@ public class WindowUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(58, 58, 58)
-                .addComponent(titleCard, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                .addComponent(titleCard, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(78, 78, 78)

@@ -40,6 +40,7 @@ Done:
 - [x] Fix authentication bug
 - [x] Implement button states
 - [x] Fix input field usability bug 
+- [x] Add pin change verification
 
 To-Do:
 - [ ] Fix pin visibilty issue _(need to implement awt ActionListener)_

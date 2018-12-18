@@ -29,7 +29,7 @@ java -jar ~/Desktop/ATM/dist/ATM.jar
 
 ## License
 
-This project is licensed under the MIT open source license.
+This project is licensed with the GNU GPL v3.0 which allows you to do pretty much whatever you want, however there are some terms which you can read about in the license page.
 
 ## Live Updates
 
